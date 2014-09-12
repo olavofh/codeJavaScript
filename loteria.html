@@ -1,0 +1,51 @@
+<script>
+var pulaLinha = function(){
+	document.write("<hr>");
+}
+
+var mostra = function(frase){
+	document.write(frase);
+	pulaLinha();
+}
+
+var quantidadeAcertos = function(jogados,sorteados){
+	
+	acertos=0;
+	
+	for(i=0;i<6;i++){
+		for(j=0;j<6;j++){
+			if(jogados[i]===sorteados[j]){
+				acertos++;
+			}
+		}
+	}
+	
+	return acertos;
+
+}
+
+alert("Jogue na loteria!");
+	
+var numerosJogados = [];
+
+for(i=0;i<6;i++){
+	numerosJogados[i] = parseInt(prompt("Diga seu "+(i+1)+" numero: "));
+}
+
+alert("Aperte OK para sortear os numeros.");
+
+var numerosSorteados = [];
+
+for(j=0;j<6;j++){
+	numerosSorteados[j] = Math.round(Math.random()*60);
+}
+
+var acertos = quantidadeAcertos(numerosJogados,numerosSorteados);
+
+mostra("Os numeros que voce jogou foram: "+numerosJogados);
+mostra("Os numeros sorteados foram: "+numerosSorteados);
+mostra("Quantidade de acertos: "+acertos);
+
+
+
+</script>
