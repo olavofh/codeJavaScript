@@ -1,0 +1,75 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+
+<script>
+
+
+var quadradoVerde = function(x,y){
+	
+
+	var tela = document.getElementById("tela");
+	var c = tela.getContext("2d");
+
+	c.fillStyle = ("green");
+	c.fillRect(x,y,50,50);
+
+	c.strokeStyle = ("black");
+	c.strokeRect(x,y,50,50);
+
+}
+
+
+var quadradoVermelho = function(x,y){
+
+	var tela = document.getElementById("tela");
+	var c = tela.getContext("2d");
+
+	c.fillStyle = ("red");
+	c.fillRect(x,y,50,50);
+
+	c.strokeStyle = ("black");
+	c.strokeRect(x,y,50,50);
+}
+
+
+var bolasAzuis = function(x,y){
+	var tela = document.getElementById("tela");
+	var c = tela.getContext("2d");
+	var Pi = (2*Math.PI); // criei uma variável para Pi para ficar mais organizado
+
+	c.fillStyle = ("blue");
+	c.beginPath();
+	c.arc(x,y,25,0,Pi);
+	c.fill();
+
+
+
+}
+
+
+//usando o while
+
+/*
+var x = 0;
+while (x<600){
+	quadradoVerde(x,0);
+	quadradoVermelho(x,50);
+	x = x + 50;
+}
+*/
+
+//usando o for
+
+var x = 0;
+
+
+for (var x=0;x<600;x=x+50){
+	quadradoVerde(x,0);
+	quadradoVermelho(x,50);
+	bolasAzuis(x,100);	
+
+
+	//x=x+50;
+}
+
+</script>
